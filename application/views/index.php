@@ -22,13 +22,28 @@
             <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
             data-cycle-timeout=3000
+            data-cycle-pause-on-hover="true"
             >
+                <img class="imgslide" src="assets/brigadeiro.jpg">
+                <img class="imgslide" src="assets/cinammon.jpg" >
+                <img class="imgslide" src="assets/pandulce-oreo.jpg">
+                <img class="imgslide" src="assets/pandulce.jpg">
 
-            <img class="imgslide" src="assets/brigadeiro.jpg">
-            <img class="imgslide" src="assets/cinammon.jpg" >
-            <img class="imgslide" src="assets/pandulce-oreo.jpg">
-            <img class="imgslide" src="assets/pandulce.jpg">
-        </div>
+            </div>
+            <!-- <div class="cycle-slideshow"
+                data-cycle-fx=scrollHorz
+                data-cycle-timeout=3000
+                data-cyv
+                style="z-index: 200;height: 100%;width: 80%;position: absolute;top:151px;left:164px;width: 77%; "
+
+            >
+                <div class="middle" style="opacity: 1">
+                        <div class="text">Pan Dulce Brigadeiro</div>
+                    </div> 
+                    <div class="middle" style="opacity: ">
+                        <div class="text">Pan Dulce Brigadeiro</div>
+                    </div> 
+            </div> -->
         </div>
     <div class='products' id="products">
         <div class="titulo">Products</div>
@@ -76,8 +91,7 @@
                 </div>
                 <div style="position: absolute; height: 71% ;width: 68%;
                 top: 14%; left: 16%; word-break: break-all;">
-                    <p class="descripcion">
-We are a gastronomic company that produces quality products for our clients. Now let's be honest: "Who does not like food?.Start to see our photos on instagram and don't waste your time. It's time to eat!"</p>
+                    <p class="descripcion">We are a gastronomic company that produces quality products for our clients. Now let's be honest: "Who does not like to eat?.Start to see our photos on instagram and don't waste your time. It's time to eat!</p>
                 </div>
             </div>
         </div>
@@ -87,31 +101,31 @@ We are a gastronomic company that produces quality products for our clients. Now
             <div class="titulo">Contact</div>
             <div class="contact-item">
                 <div style="width:100%; display: inline-block;">
-                    <span class="icon-phone" style="font-size: 40px"></span>
+                    <span class="icon-phone icono"></span>
                     <h1 style="display: inline-block;">: +595 972535558</h1>
                 </div>
             </div>
             <div class="contact-item">
             <div style="width:100%; display: inline-block;">
-                <span class="icon-envelop" style="font-size: 40px"></span>
+                <span class="icon-envelop icono"</span>
                 <h1 style="display: inline-block;">: patriciae.torres@gmail.com</h1>
             </div>
         </div>
         <div class="contact-item">
             <div style="width:100%; display: inline-block;">
-                <span class="icon-facebook2" style="font-size: 40px"></span>
+                <span class="icon-facebook2 icono"></span>
                 <h1 style="display: inline-block;">: El Legado de Marthita</h1>
             </div>
         </div>
         <div class="contact-item">
             <div style="width:100%; display: inline-block;">
-                <span class="icon-instagram" style="font-size: 40px"></span>
+                <span class="icon-instagram icono"></span>
                 <h1 style="display: inline-block;">: @ellegado_demarthita</h1>
             </div>
         </div>
         <div class="contact-item">
             <div style="width:100%; display: inline-block;">
-                <span class="icon-whatsapp" style="font-size: 40px"></span>
+                <span class="icon-whatsapp icono"></span>
                 <h1 style="display: inline-block;">: +595 972535558</h1>
             </div>
         </div>
@@ -128,7 +142,6 @@ We are a gastronomic company that produces quality products for our clients. Now
         </div>
     </div>
     <div id="footer" class="footer">
-        <div>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         <p style="color: #585858; margin-top:40px; ">© 2017. Created and designed by Mario Gueyraud</div>
     </div>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
