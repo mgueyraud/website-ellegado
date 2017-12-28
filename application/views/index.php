@@ -19,10 +19,10 @@
   </header>
   <div class="espacio"></div>
         <div class="background">
-            <div class="cycle-slideshow" 
+            <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
             data-cycle-timeout=2000
-            >   
+            >
 
             <img class="imgslide" src="assets/brigadeiro.jpg">
             <img class="imgslide" src="assets/cinammon.jpg" >
@@ -39,7 +39,7 @@
                     <div class="middle">
                         <div class="text">Pan Dulce Brigadeiro</div>
                     </div>
-                </div>  
+                </div>
             </div>
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
@@ -47,7 +47,7 @@
                     <div class="middle">
                         <div class="text">Cinammon Rolls</div>
                     </div>
-                </div>  
+                </div>
             </div>
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
@@ -85,33 +85,33 @@
         <div class="cuadroborde">
             <h1>Contact</h1>
             <div class="contact-item">
-                <div style="width:100%; display: inline-block:">
+                <div style="width:100%; display: inline-block;">
                     <span class="icon-phone" style="font-size: 40px"></span>
-                    <h1 style="display: inline-block;">: +595 972535558</h1> 
+                    <h1 style="display: inline-block;">: +595 972535558</h1>
                 </div>
             </div>
             <div class="contact-item">
-            <div style="width:100%; display: inline-block:">
+            <div style="width:100%; display: inline-block;">
                 <span class="icon-envelop" style="font-size: 40px"></span>
-                <h1 style="display: inline-block;">: patriciae.torres@gmail.com</h1> 
+                <h1 style="display: inline-block;">: patriciae.torres@gmail.com</h1>
             </div>
         </div>
         <div class="contact-item">
-            <div style="width:100%; display: inline-block:">
+            <div style="width:100%; display: inline-block;">
                 <span class="icon-facebook2" style="font-size: 40px"></span>
-                <h1 style="display: inline-block;">: El Legado de Marthita</h1> 
+                <h1 style="display: inline-block;">: El Legado de Marthita</h1>
             </div>
         </div>
         <div class="contact-item">
-            <div style="width:100%; display: inline-block:">
+            <div style="width:100%; display: inline-block;">
                 <span class="icon-instagram" style="font-size: 40px"></span>
-                <h1 style="display: inline-block;">: @ellegado_demarthita</h1> 
+                <h1 style="display: inline-block;">: @ellegado_demarthita</h1>
             </div>
         </div>
         <div class="contact-item">
-            <div style="width:100%; display: inline-block:">
+            <div style="width:100%; display: inline-block;">
                 <span class="icon-whatsapp" style="font-size: 40px"></span>
-                <h1 style="display: inline-block;">: +595 972535558</h1> 
+                <h1 style="display: inline-block;">: +595 972535558</h1>
             </div>
         </div>
         <div id="map" class="map"></div>
@@ -185,8 +185,8 @@
             $.ajax({
                 method: "POST",
                 url: "/welcome/sendEmail",
-                data: { 
-                    name : name.val(), 
+                data: {
+                    name : name.val(),
                     email: email.val(),
                     message: message.val()
                 },
@@ -197,9 +197,9 @@
                     console.log(response)
                 }
             });
-            
+
         });
-        
+
     });
 </script>
 </body>
