@@ -4,7 +4,7 @@
 	<title>El legado de Marthita</title>
 	<link href="css/inicio.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/logo.jpg" />
+    <link style="border-radius: 50%;" rel="icon" type="image/png" href="assets/logo.jpg" />
 </head>
 <body>
 	<header >
@@ -18,7 +18,7 @@
         <li id="facebook" style="float: right; margin: 20px 0;"><img class="redes" src="assets/facebook.png" ></li>
   </header>
   <div class="espacio"></div>
-        <div class="background">
+        <div class="background1">
             <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
             data-cycle-timeout=2000
@@ -31,7 +31,7 @@
         </div>
         </div>
     <div class='products' id="products">
-        <h1>Products</h1>
+        <div class="titulo">Products</div>
         <div class="pimagenes">
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div id="aboutus">
-        <div class="background" style="position: relative;">
+        <div class="background2" style="position: relative;">
             <div class="circuloaboutus">
                 <div style="position: absolute; height: 9% ;width: 43%;
                 top: 5%; left: 28%; word-break: break-all;">
@@ -76,14 +76,14 @@
                 </div>
                 <div style="position: absolute; height: 71% ;width: 68%;
                 top: 14%; left: 16%; word-break: break-all;">
-                    <p style="font-size: 100%; margin-top: 20px;">We are a company that makes pan dulce JAJAJAJAJAAJJ</p>
+                    <p class="descripcion">We are a company that makes pan dulce JAJAJAJAJAAJJ</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="contact" id="contact">
         <div class="cuadroborde">
-            <h1>Contact</h1>
+            <div class="titulo">Contact</div>
             <div class="contact-item">
                 <div style="width:100%; display: inline-block;">
                     <span class="icon-phone" style="font-size: 40px"></span>
@@ -119,7 +119,7 @@
     </div>
     <div id="mail" class="mail">
         <div class="cuadroborde">
-            <h1>Email Us</h1>
+            <div class="titulo">Email Us</div>
             <input id="name" type="text" name="nombre" placeholder="Name" class="campoTexto">
             <input id="email" type="text" name="email" placeholder="Email" class="campoTexto">
             <textarea type="text" name="email" class="textarea">Message</textarea>
@@ -127,25 +127,19 @@
         </div>
     </div>
     <div id="footer" class="footer">
-        <p>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-        <p style="color: #585858; margin-top:40px; ">© 2017. Created by Mario Gueyraud</p>
+        <div>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <p style="color: #585858; margin-top:40px; ">© 2017. Created and designed by Mario Gueyraud</div>
     </div>
-<script
-		  src="https://code.jquery.com/jquery-3.2.1.js"
-		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 		  crossorigin="anonymous"></script>
 
-<!-- include Cycle2 -->
 <script src="/js/cycles.js"></script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVuouEtI8E235OJNBVdHUrRQNZ4qCA3AE&callback=initMap">
     </script>
 
-<!-- include one or more optional Cycle2 plugins -->
 <script>
   $(function(){
-    //hola
-    //hola
         var boton = $('.boton');
         var name = $('.name');
         var email = $('.email');
