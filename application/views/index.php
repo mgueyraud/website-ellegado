@@ -159,14 +159,15 @@
         var email = $('.email');
         var message = $('.textarea');
         var body = $("html, body");
+        console.log($(window).height());
         $('#linkproductos').on('click',function(){
-            body.stop().animate({scrollTop:720}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(50*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkaboutus').on('click',function(){
-            body.stop().animate({scrollTop:1520}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(115*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkcontact').on('click',function(){
-            body.stop().animate({scrollTop:2380}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(180*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#imagen').on('click',function(){
             body.stop().animate({scrollTop:0}, 500, 'swing', function(){});
