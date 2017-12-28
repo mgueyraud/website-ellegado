@@ -1,0 +1,361 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+ 
+/* HTML5 display-role reset for older browsers */
+ 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+ 
+body {
+  line-height: 1;
+  height: 100%;
+  width: 100% }
+ 
+ol, ul {
+  list-style: none; }
+ 
+blockquote, q {
+  quotes: none; }
+ 
+blockquote {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+ 
+q {
+  &:before, &:after {
+    content: '';
+    content: none; } }
+ 
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+ 
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+h1{
+  font-size: 40px;
+  font-family: cursive;
+}
+header {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  height:150px;
+  background-color: #07C0C3;
+  border-bottom: 1px solid #466995;
+  width: 100%;
+  position: fixed;
+  z-index:600;
+  top:0;
+  right:0;
+  left:0;
+  
+}
+li{
+  cursor: pointer;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-family: cursive;
+}
+.slide{
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+.logo{
+  border-radius: 80px;
+  min-width: 30px;
+  max-width: 150px;
+  max-height: 150px;
+  min-height: 30px; 
+}
+.espacio{
+  height:133px;
+  width: 100%;
+}
+.background{
+  text-align: center;
+  width: 100%;
+  height: 750px;
+  background-image: url('../assets/banner.png');
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background-size: cover;
+
+}
+.container{
+  position: relative;
+  width:500px;
+  height:300px;
+  border-radius: 20px;
+}
+.text {
+  background-color: #07C0C3;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 9px;
+}
+.img_slide{
+  opacity: 1;
+  width:1000px;
+  height:750px;
+  margin: 6px 0;
+  border-radius: 20px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.img_producto{
+  width:500px;
+  height:300px;
+  margin: 6px 0;
+  border-radius: 20px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.container:hover .img_producto{
+  opacity: 0.3;
+}
+.container:hover .middle{
+  opacity: 1;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.redes{
+  width: 44px;
+  height: 44px;
+  margin: 10px 10px;
+}
+.cycle-slideshow{
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-radius: 20px;  
+  text-align: center;
+  max-height: 750px;
+  width: fit-content; 
+  min-width: 200px; 
+  margin: 0 auto; 
+  padding: 0; 
+  background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
+
+ }
+ .contact{
+  margin-top: 60px;
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+  border-style: dotted;
+ }
+ .products{
+  text-align: center;
+  margin: 5% 0;
+  width: 100%;
+ }
+ .pimagenes{
+    margin-top:50px; 
+    width: 100%;
+ }
+ .footer{
+  width: 100%;
+  height: 90px;
+  background: #07C0C3;
+  text-align: center;
+ }
+ .contact-item{
+  width: fit-content; 
+  margin-top: 30px; 
+  text-align: left; 
+  margin-left: 5%;
+ }
+ .campoTexto{
+  width: 83%;
+  display: inline-block;
+  height: 35px;
+  margin-top: 40px;
+  border-radius: 5%;
+  font-size: 20px;
+}
+.textarea{
+  width: 83%;
+  display: inline-block;
+  height: 350px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+.boton{
+    cursor: pointer;
+    height: 30px;
+    width: 83%;
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    background: #07C0C3;
+    margin-bottom: 3%;
+    border-radius:5%;
+    line-height: 50px;
+    font-size: 21px;
+    transition: 0.1s;
+}
+.map{
+  height: 300px;
+  width: 100%;  
+  margin: 0 auto; 
+  margin-top:30px;
+  border-radius: 20px;
+}
+.mail{
+  margin-top:70px;
+  text-align: center;
+  margin-bottom: 57px; 
+}
+.cuadroborde{
+  width: 57%; 
+  margin: 0 auto; 
+  border-radius: 20px; 
+  border: 4px dashed #07C0C3; 
+  padding-top: 5px;
+}
+.circuloaboutus{
+  height: 60%; 
+  width: 60%; 
+  text-align: center; 
+  background: white; 
+  margin:0 auto; 
+  border-radius: 50%; 
+  vertical-align: middle; 
+  position: absolute; 
+  top:20%; 
+  left: 19.5%;
+}
+.img_logo{
+  margin: 0 auto;
+  height: 170px;
+  width: 170px;
+  background-image: url('../assets/logo.jpg');
+  z-index:30;
+  background-size: cover;
+  border-radius: 85px;
+  display: none;
+}
+@media screen and (max-width: 1079px) {
+  html{
+    width: 100%;
+    height: 100%;
+  }
+    header{
+      height: 90px;
+      text-align: center;
+    }
+    li{
+      display: none;
+    }
+
+    .img_slide{
+      width: 100%;
+    }
+    .img_logo{
+      height: 90px;
+      width: 90px;
+      display: inline-block;
+    }
+    .espacio{
+      width: 100%;
+      height: 74px;
+    }
+    .background{
+      width: 100%;
+      height: 300px;
+    }
+    .cycle-slideshow{
+      height: 300px;
+      width: 100%; 
+    }
+    .img_producto{
+      position: relative;
+      width:100%;
+      height:50%;
+    }
+    .imgslide{
+      width:100%;
+      height:100%;
+    }
+    .middle {
+      position: absolute;
+      top: 36%;
+      left: 50%;
+    }
+    .container{
+      position: relative;
+      width:100%;
+      height:fit-content;
+    }
+    .pimagenes{
+      margin-top:20px; 
+    }
+    h1{
+      font-size: 15px;
+    }
+    .cuadroborde{
+      width: 90%;
+    }
+    p{
+      font-size: 10px;
+    }
+  }
+ @font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?9xjeql');
+  src:  url('fonts/icomoon.eot?9xjeql#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?9xjeql') format('truetype'),
+    url('fonts/icomoon.woff?9xjeql') format('woff'),
+    url('fonts/icomoon.svg?9xjeql#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-whatsapp:before {
+  content: "\ea93";
+}
