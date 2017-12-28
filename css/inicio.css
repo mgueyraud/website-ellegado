@@ -350,6 +350,9 @@ li{
     .icono{
       font-size: 30px;
     }
+    .background1,.background2{
+      background-attachment: scroll;
+  }
 }
 @font-face {
   font-family: 'icomoon';
