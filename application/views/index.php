@@ -145,6 +145,7 @@
 <script>
   $(function(){
     //hola
+    //hola
         var boton = $('.boton');
         var name = $('.name');
         var email = $('.email');
