@@ -78,7 +78,7 @@ li{
   min-height: 30px; 
 }
 .espacio{
-  height:133px;
+  height:151px;
   width: 100%;
 }
 .background1, .background2{
@@ -87,6 +87,9 @@ li{
   height: 750px;
   background-image: url('../assets/banner.png');
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 
 }
@@ -251,7 +254,7 @@ li{
   display: none;
 }
 .descripcion{
-  font-size: 100%; 
+  font-size: 140%; 
   margin-top: 20px;
 }
 @media screen and (max-width: 1079px) {
@@ -277,7 +280,7 @@ li{
     }
     .espacio{
       width: 100%;
-      height: 74px;
+      height: 91px;
     }
     .background1{
       display: hidden;

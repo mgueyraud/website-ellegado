@@ -21,7 +21,7 @@
         <div class="background1">
             <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
-            data-cycle-timeout=2000
+            data-cycle-timeout=3000
             >
 
             <img class="imgslide" src="assets/brigadeiro.jpg">
@@ -76,7 +76,8 @@
                 </div>
                 <div style="position: absolute; height: 71% ;width: 68%;
                 top: 14%; left: 16%; word-break: break-all;">
-                    <p class="descripcion">We are a company that makes pan dulce JAJAJAJAJAAJJ</p>
+                    <p class="descripcion">
+We are a gastronomic company that produces quality products for our clients. Now let's be honest: "Who does not like food?.Start to see our photos on instagram and don't waste your time. It's time to eat!"</p>
                 </div>
             </div>
         </div>
