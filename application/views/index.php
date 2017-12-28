@@ -127,7 +127,7 @@
         </div>
     </div>
     <div id="footer" class="footer">
-        <div>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <p>Iconos diseñados por <a href="http://www.freepik.com" title="Freepik">Freepik</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         <p style="color: #585858; margin-top:40px; ">© 2017. Created by Mario Gueyraud</p>
     </div>
 <script
@@ -144,6 +144,7 @@
 <!-- include one or more optional Cycle2 plugins -->
 <script>
   $(function(){
+    //hola
         var boton = $('.boton');
         var name = $('.name');
         var email = $('.email');
