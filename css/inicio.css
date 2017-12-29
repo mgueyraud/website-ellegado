@@ -46,7 +46,8 @@ h1, .titulo{
 }
 header {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  height:150px;
+  height: 127px;
+  max-height: 150px;
   background-color: #07C0C3;
   border-bottom: 1px solid #466995;
   width: 100%;
@@ -76,12 +77,10 @@ li{
 .logo{
   border-radius: 80px;
   min-width: 30px;
-  max-width: 150px;
-  max-height: 150px;
-  min-height: 30px; 
+  max-width: 125px;
 }
 .espacio{
-  height:151px;
+  height:127px;
   width: 100%;
 }
 .background1,.background2{
@@ -104,7 +103,7 @@ li{
 .container{
   position: relative;
   width:500px;
-  height:300px;
+  height:auto;
   border-radius: 20px;
 }
 .text {
@@ -117,22 +116,28 @@ li{
 .img_slide{
   opacity: 1;
   width:1000px;
-  height:100%;
+  height:auto;
   margin: 6px 0;
   border-radius: 20px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
 .img_producto{
+  visibility: hidden;
   width:500px;
-  height:300px;
+  height:auto;
   margin: 6px 0;
-  border-radius: 20px;
   transition: .5s ease;
   backface-visibility: hidden;
+  vertical-align: top;
 }
 .container:hover .img_producto{
   opacity: 0.3;
+  transform: scale(1.015);
+      -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 .container:hover .middle{
   opacity: 1;
@@ -265,8 +270,18 @@ li{
   font-size: 40px;
 }
 .descripcion{
+  text-align : justify;
   font-size: 140%; 
   margin-top: 20px;
+}
+.fadeIn {
+  -webkit-animation: animat_show 0.8s;
+  animation: animat_show 0.8s;
+  visibility: visible !important;
+}
+@-webkit-keyframes animat_show{
+  0%{opacity:0}
+  100%{opacity:1}
 }
 @media screen and (max-width: 1079px) {
   html{
@@ -354,6 +369,7 @@ li{
       background-attachment: scroll;
   }
 }
+
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?9xjeql');

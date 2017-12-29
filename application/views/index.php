@@ -8,21 +8,21 @@
 </head>
 <body>
 	<header >
-    <ul id='encabezado'>
+    <ul id='encabezado' style="height: 100%;">
         <div class="img_logo"></div>
     	<li id='imagen'><img class="logo" src="assets/logo.jpg"></img></li>
-      	<li id="linkproductos">Products</li>
-        <li id="linkaboutus">About us</li>
-        <li id="linkcontact">Contact</li>
+      	<li id="linkproductos">Productos</li>
+        <li id="linkaboutus">Sobre nosostros</li>
+        <li id="linkcontact">Contacto</li>
         <li id="instagram" style="float: right; margin: 20px 20px;"><img class="redes" src="assets/instagram.png"></li>
         <li id="facebook" style="float: right; margin: 20px 0;"><img class="redes" src="assets/facebook.png" ></li>
   </header>
-  <div class="espacio"></div>
+  <div class="espacio">
+  </div>
         <div class="background1">
             <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
-            data-cycle-timeout=3000
-            data-cycle-pause-on-hover="true"
+            data-cycle-timeout=2000
             >
                 <img class="imgslide" src="assets/brigadeiro.jpg">
                 <img class="imgslide" src="assets/cinammon.jpg" >
@@ -46,7 +46,7 @@
             </div> -->
         </div>
     <div class='products' id="products">
-        <div class="titulo">Products</div>
+        <div class="titulo">Productos</div>
         <div class="pimagenes">
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
@@ -87,18 +87,18 @@
             <div class="circuloaboutus">
                 <div style="position: absolute; height: 9% ;width: 43%;
                 top: 5%; left: 28%; word-break: break-all;">
-                    <h1>About Us</h1>
+                    <h1>Sobre nosotros</h1>
                 </div>
                 <div style="position: absolute; height: 71% ;width: 68%;
                 top: 14%; left: 16%; word-break: break-all;">
-                    <p class="descripcion">We are a gastronomic company that produces quality products for our clients. Now let's be honest: "Who does not like to eat?.Start to see our photos on instagram and don't waste your time. It's time to eat!</p>
+                    <p class="descripcion">Nosotros somos una compania gastronomica que brinda productos de calidad a nuestros clientes.Ahora seamos sinceros:A quien no le gusta comer?.Comienza a ver nuestras fotos en instagram y deja de desperdiciar tu tiempo.Es hora de comer!</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="contact" id="contact">
         <div class="cuadroborde">
-            <div class="titulo">Contact</div>
+            <div class="titulo">Contacto</div>
             <div class="contact-item">
                 <div style="width:100%; display: inline-block;">
                     <span class="icon-phone icono"></span>
@@ -134,7 +134,7 @@
     </div>
     <div id="mail" class="mail">
         <div class="cuadroborde">
-            <div class="titulo">Email Us</div>
+            <div class="titulo">Envianos tu opinion</div>
             <input id="name" type="text" name="nombre" placeholder="Name" class="campoTexto">
             <input id="email" type="text" name="email" placeholder="Email" class="campoTexto">
             <textarea type="text" name="email" class="textarea">Message</textarea>
@@ -161,13 +161,13 @@
         var body = $("html, body");
         console.log($(window).height());
         $('#linkproductos').on('click',function(){
-            body.stop().animate({scrollTop:(50*$(window).height())/100}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(70*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkaboutus').on('click',function(){
-            body.stop().animate({scrollTop:(115*$(window).height())/100}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(190*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkcontact').on('click',function(){
-            body.stop().animate({scrollTop:(180*$(window).height())/100}, 500, 'swing', function(){});
+            body.stop().animate({scrollTop:(270*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#imagen').on('click',function(){
             body.stop().animate({scrollTop:0}, 500, 'swing', function(){});
@@ -208,6 +208,27 @@
             });
 
         });
+      function showImages(el) {
+        var windowHeight = jQuery( window ).height();
+        $(el).each(function(){
+            var thisPos = $(this).offset().top;
+
+            var topOfWindow = $(window).scrollTop();
+            if (topOfWindow + windowHeight - 200 > thisPos ) {
+                $(this).addClass("fadeIn");
+            }
+        });
+    }
+
+    // if the image in the window of browser when the page is loaded, show that image
+    $(document).ready(function(){
+            showImages('.img_producto');
+    });
+
+    // if the image in the window of browser when scrolling the page, show that image
+    $(window).scroll(function() {
+            showImages('.img_producto');
+    });
 
     });
 </script>
