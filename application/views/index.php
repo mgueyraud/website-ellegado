@@ -91,13 +91,13 @@
                 </div>
                 <div style="position: absolute; height: 71% ;width: 68%;
                 top: 14%; left: 16%; word-break: break-all;">
-                    <p class="descripcion">Nosotros somos una compania gastronomica que brinda productos de calidad a nuestros clientes.Ahora seamos sinceros:A quien no le gusta comer?.Comienza a ver nuestras fotos en instagram y deja de desperdiciar tu tiempo.Es hora de comer!</p>
+                    <p class="descripcion">Nosotros somos una compania gastronomica que brinda productos de calidad a nuestros clientes. Ahora seamos sinceros: A quien no le gusta comer?. Comienza a ver nuestras fotos en instagram y deja de desperdiciar tu tiempo. Es hora de comer!</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="contact" id="contact">
-        <div class="cuadroborde">
+        <div class="cuadroborde" style="margin-bottom: 30px;">
             <div class="titulo">Contacto</div>
             <div class="contact-item">
                 <div style="width:100%; display: inline-block;">
@@ -108,7 +108,7 @@
             <div class="contact-item">
             <div style="width:100%; display: inline-block;">
                 <span class="icon-envelop icono"</span>
-                <h1 style="display: inline-block;">: patriciae.torres@gmail.com</h1>
+                <h1 style="display: inline-block;">: ellegadodemarthita@gmail.com</h1>
             </div>
         </div>
         <div class="contact-item">
@@ -129,16 +129,16 @@
                 <h1 style="display: inline-block;">: +595 972535558</h1>
             </div>
         </div>
-        <div id="map" class="map"></div>
+        <!--<div id="map" class="map"></div>-->
         </div>
     </div>
     <div id="mail" class="mail">
         <div class="cuadroborde">
             <div class="titulo">Envianos tu opinion</div>
-            <input id="name" type="text" name="nombre" placeholder="Name" class="campoTexto">
+            <input id="name" type="text" name="nombre" placeholder="Nombre" class="campoTexto">
             <input id="email" type="text" name="email" placeholder="Email" class="campoTexto">
-            <textarea type="text" name="email" class="textarea">Message</textarea>
-            <div class="boton">Send Message</div>
+            <textarea type="text" name="email" class="textarea">Mensaje</textarea>
+            <div class="boton">Enviar mensaje</div>
         </div>
     </div>
     <div id="footer" class="footer">
@@ -148,26 +148,29 @@
 		  crossorigin="anonymous"></script>
 
 <script src="/js/cycles.js"></script>
-<script async defer
+<!--<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVuouEtI8E235OJNBVdHUrRQNZ4qCA3AE&callback=initMap">
-    </script>
+    </script>-->
 
 <script>
   $(function(){
         var boton = $('.boton');
-        var name = $('.name');
-        var email = $('.email');
+        var name = $('#name');
+        var email = $('#email');
         var message = $('.textarea');
         var body = $("html, body");
         console.log($(window).height());
         $('#linkproductos').on('click',function(){
-            body.stop().animate({scrollTop:(70*$(window).height())/100}, 500, 'swing', function(){});
+            $('html, body').animate({scrollTop:$('#products').position().top-250}, 'slow');
+            //body.stop().animate({scrollTop:(70*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkaboutus').on('click',function(){
-            body.stop().animate({scrollTop:(190*$(window).height())/100}, 500, 'swing', function(){});
+            $('html, body').animate({scrollTop:$('#aboutus').position().top-275}, 'slow');
+            //body.stop().animate({scrollTop:(190*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkcontact').on('click',function(){
-            body.stop().animate({scrollTop:(270*$(window).height())/100}, 500, 'swing', function(){});
+            $('html, body').animate({scrollTop:$('#contact').position().top-100}, 'slow');
+            //body.stop().animate({scrollTop:(270*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#imagen').on('click',function(){
             body.stop().animate({scrollTop:0}, 500, 'swing', function(){});
@@ -178,7 +181,7 @@
         $('#instagram').on('click',function(){
             window.open("https://www.instagram.com/ellegado_demarthita/");
         });
-        window.initMap = function() {
+        /*window.initMap = function() {
         var uluru = {lat: -25.299392700195312, lng: -57.646583557128906};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 17,
@@ -189,8 +192,9 @@
           map: map,
           title:"El legado de Marthita"
         });
-      }
+      }*/
       boton.on('click',function(){
+        if(name.val() !== '' && email.val() !== '' && message.val() !== ''){
             $.ajax({
                 method: "POST",
                 url: "/welcome/sendEmail",
@@ -200,14 +204,20 @@
                     message: message.val()
                 },
                 success: function(response){
-                    console.log(response)
+                    console.log(response);
+                    alert("Mensaje enviado con exito!");
                 },
                 error: function(response) {
-                    console.log(response)
+                    console.log(response);
+                    alert("Error el mensaje no se ha podido enviar");
                 }
             });
+        }else{
+            alert("Debe completar todos los campos!");
+        } 
 
         });
+
       function showImages(el) {
         var windowHeight = jQuery( window ).height();
         $(el).each(function(){

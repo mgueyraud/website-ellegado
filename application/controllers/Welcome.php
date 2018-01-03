@@ -24,21 +24,28 @@ class Welcome extends CI_Controller {
 	public function index(){
 		$this->load->view('index');
 	}
+
+	public function login(){
+		$this->load->view('login');
+	}
+
+
 	public function sendEmail(){
 		$nombre = $this->input->post('name');
 		$email = $this->input->post('email');
 		$message = $this->input->post('message');
 		$this->email->from($email, $nombre);
-		$this->email->to('mario@teixido.co');
+		$this->email->to('ellegadodemarthita@gmail.com');
 
-		$this->email->subject('El legado de Marthita');
+		$this->email->subject('El legado de Marthita(Pagina web)');
 		$this->email->message($message);
 
 		$this->email->send();
 		//$this->load->view('/login/postJs');
 		//$this->load->view('/login/welcome',$data);
-		$this->output
+		/*$this->output
         ->set_content_type('application/json')
-        ->set_output(json_encode($data));
+        ->set_output(json_encode($data));*/
 	}
+
 }
