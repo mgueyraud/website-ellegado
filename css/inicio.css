@@ -280,6 +280,12 @@ li{
   animation: animat_show 0.8s;
   visibility: visible !important;
 }
+.columna{
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  margin:0 auto;
+}
 @-webkit-keyframes animat_show{
   0%{opacity:0}
   100%{opacity:1}

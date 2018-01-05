@@ -48,23 +48,16 @@
     <div class='products' id="products">
         <div class="titulo">Productos</div>
         <div class="pimagenes">
-            <div style="display: inline-block; margin: 0 20px;">
+            <div class="columna">
+                <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen0" class="img_producto" src="assets/brigadeiro.jpg" alt="Avatar">
-                    <div class="middle">
-                        <div class="text">Pan Dulce Brigadeiro</div>
+                        <div class="middle">
+                            <div class="text">Pan Dulce Brigadeiro</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style="display: inline-block; margin: 0 20px;">
-                <div class="container">
-                    <img id="imagen1" class="img_producto" src="assets/cinammon.jpg">
-                    <div class="middle">
-                        <div class="text">Cinammon Rolls</div>
-                    </div>
-                </div>
-            </div>
-            <div style="display: inline-block; margin: 0 20px;">
+                <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen2" class="img_producto" src="assets/pandulce-oreo.jpg">
                     <div class="middle">
@@ -72,6 +65,17 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <div class="columna">
+                <div style="display: inline-block; margin: 0 20px;">
+                <div class="container">
+                    <img id="imagen1" class="img_producto" src="assets/cinammon.jpg">
+                    <div class="middle">
+                        <div class="text">Cinammon Rolls</div>
+                    </div>
+                </div>
+            </div>
+            
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen3" class="img_producto" src="assets/pandulce.jpg">
@@ -80,6 +84,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+            
         </div>
     </div>
     <div id="aboutus">
