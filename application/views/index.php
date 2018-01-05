@@ -167,7 +167,7 @@
         var body = $("html, body");
         console.log($(window).height());
         $('#linkproductos').on('click',function(){
-            $('html, body').animate({scrollTop:$('#products').position().top-250}, 'slow');
+            $('html, body').animate({scrollTop:$('#products').position().top-100}, 'slow');
             //body.stop().animate({scrollTop:(70*$(window).height())/100}, 500, 'swing', function(){});
         });
         $('#linkaboutus').on('click',function(){

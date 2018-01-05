@@ -326,7 +326,8 @@ li{
     }
     .cycle-slideshow{
       height: 100%;
-      width: 80%; 
+      width: 80%;
+      border-radius: 0;  
     }
     .img_producto{
       border-radius: 0px;
@@ -374,7 +375,7 @@ li{
     }
     .background1,.background2{
       background-attachment: scroll;
-  }
+    }
 }
 
 @font-face {
