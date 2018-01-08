@@ -24,4 +24,14 @@ class usuarios_model extends CI_Model {
         $result = $query->result();
         return $result;
     }
+
+    function insertarProducto($image_id,$descripcion,$promocion){
+        $result = array("success" => false, "last_id" => NULL);
+
+        $insert_data = array('nombre_img' => $image_id, 'nombre_producto' => $descripcion, 'promocion' => $promocion);
+        $this->db->set('created_at', 'now()', false);
+
+        $result['success'] = $this->db->insert('Productos',$insert_data);
+        $result['last_id'] = $this->db->insert_id();
+    }
 }

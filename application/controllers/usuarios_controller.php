@@ -87,4 +87,53 @@ class usuarios_controller extends CI_Controller {
 		$_SESSION['loggedin'] = false;
 		echo json_encode($_SESSION['loggedin']);
 	}
+
+	public function createProducto(){
+		$output = array(
+			'success' => false,
+			'message' => "Ha ocurrido un error al cargar la promoción, intente mas tarde",
+			'last_id' => NULL,
+			'image_id' => NULL,
+			'csrfName' => $this->security->get_csrf_token_name(), //desactive nomas el csrf, mate todo el ws hehe
+      'csrfHash' => $this->security->get_csrf_hash()
+		);
+		$descripcion = $this->input->POST('texto');
+		$promocion_input = $this->input->POST('promocion');
+		if(isset($_FILES['image'])){
+			if(0 < $_FILES['image']['error']){
+					$output['message'] = "Ha ocurrido un error al cargar la imagen";
+	    	}else{
+				$image_id = md5(time());
+	        	move_uploaded_file($_FILES['image']['tmp_name'], 'assets/' . $image_id . ".png");
+				$output['image_id'] = $image_id;
+			}
+		}else{
+			if($this->input->post('edit') == "false"){
+				$output['message'] = "Debes cargar una imagen.";
+			}else{
+				if(!isset($image_id)){
+					$image_id = $this->input->post('image_id');
+					$output['image_id'] = $image_id;
+				}
+			}
+
+		}
+		$promocion = 0;
+		if($promocion_input == 'on'){
+			$promocion = 1;
+		}
+		$model_injector = $this->usuarios_model->insertarProducto($image_id,$descripcion,$promocion);
+
+		if($model_injector) {
+
+				$output['success'] = true;
+				$output['message'] = "Se ha insertado el producto con exito";
+			} else {
+
+				$output['success'] = false;
+				$output['message'] = "Ha ocurrido un error inesperado al tratar de insertar el producto, vuelva a intentarlo nuevamente.";
+			}
+
+			echo json_encode($model_injector); exit;
+	}
 }

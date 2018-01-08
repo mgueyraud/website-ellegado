@@ -26,6 +26,8 @@ class Welcome extends CI_Controller {
 	}
 
 	public function login(){
+		session_start();
+		$_SESSION['loggedin'] = false;
 		$this->load->view('login');
 	}
 
