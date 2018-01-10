@@ -27,7 +27,7 @@ class usuarios_controller extends CI_Controller {
 		echo "string";
 	}
 
-	public function insertarusuario(){
+	/*public function insertarusuario(){
 		$user = $this->input->POST('user');
 		$password = $this->input->POST('password');
 		$email =$this->input->POST('email');
@@ -52,7 +52,7 @@ class usuarios_controller extends CI_Controller {
 			}
 
 			echo json_encode($model_injector); exit;
-	}
+	}*/
 
 	public function signin(){
 		$this->load->view('signin');
@@ -119,21 +119,74 @@ class usuarios_controller extends CI_Controller {
 
 		}
 		$promocion = 0;
-		if($promocion_input == 'on'){
+		if($promocion_input == 'true'){
 			$promocion = 1;
 		}
 		$model_injector = $this->usuarios_model->insertarProducto($image_id,$descripcion,$promocion);
 
 		if($model_injector) {
-
+				$output['last_id'] = $model_injector['last_id'];
 				$output['success'] = true;
-				$output['message'] = "Se ha insertado el producto con exito";
+				$output['message'] = "Se ha insertado con exito el producto";
 			} else {
 
 				$output['success'] = false;
 				$output['message'] = "Ha ocurrido un error inesperado al tratar de insertar el producto, vuelva a intentarlo nuevamente.";
 			}
+				output:
+			$this->output
+				 ->set_content_type('application/json')
+				 ->set_output(json_encode($output));
+	}
 
-			echo json_encode($model_injector); exit;
+	public function getProductos() {
+		$output = array('success' => false,
+						'message' => "Se han obtenido las productos con exito.",
+						'productos' => array());
+
+		$productos = $this->usuarios_model->get_productos();
+
+		if(count($productos) > 0){
+			$output['productos'] = $productos;
+			$output['success'] = true;
+		}
+		$this->output
+				 ->set_content_type('application/json')
+				 ->set_output(json_encode($output));
+	}
+
+	public function eliminarProducto(){
+		$id=$this->input->post('id');
+		$output = array('success' => false,"message" => "Se ha eliminado el producto con exito" );
+		$eliminado = $this->usuarios_model->eliminar_producto($id);
+		if($eliminado){
+			$output['success'] = true;
+		}else{
+			$output['message'] = "Ha ocurrido un error";
+		}
+		$this->output
+				 ->set_content_type('application/json')
+				 ->set_output(json_encode($output));
+	}
+
+	public function addUser(){
+		$output = array('success' => false,"message" => "Se ha insertado el usuario con exito" );
+		$email = $this->input->POST('email');
+		$usuario = $this->input->POST('usuario');
+		$contrasena = $this->input->POST('contrasena');
+		$rcontrasena = $this->input->POST('rcontrasena');
+		if($contrasena == $rcontrasena){
+			$model_injector = $this->usuarios_model->addUser($usuario,$contrasena,$email);
+			if($model_injector){
+				$output['succes'] = true;
+				$output['message'] = 'Se inserto el usuario ocon exito';
+			}else{
+				$output['succes'] = false;
+				$output['message'] = 'No se ha podido insertar el usuario';
+			}
+		}else{
+			$output['succes'] = false;
+			$output['message'] = 'Las contrasenas no coinciden';
+		}
 	}
 }

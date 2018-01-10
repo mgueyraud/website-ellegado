@@ -5,6 +5,7 @@ class Welcome extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->library('email');
+		$this->load->model('usuarios_model');
 	}
 	/**
 	 * Index Page for this controller.
@@ -48,6 +49,17 @@ class Welcome extends CI_Controller {
 		/*$this->output
         ->set_content_type('application/json')
         ->set_output(json_encode($data));*/
+        $output = array('success' => false,
+						'message' => "Se ha insertado el email con exito");
+		$model_injector = $this->usuarios_model->saveEmail($email);
+		if($model_injector){
+			$output['succes'] = true;
+			$output['message'] = 'Se inserto el email con exito ';
+		}else{
+			$output['succes'] = false;
+			$output['message'] = 'No se ha podido insertar el email';
+		}
 	}
+
 
 }

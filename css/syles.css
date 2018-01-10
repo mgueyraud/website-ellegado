@@ -241,13 +241,21 @@ table,
      height: 200px;
      
 }
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
 
-  to {
-    margin-left: 0%;
+  @media screen and (max-width: 1079px) {
+    .cuerpo{
+      width: 80%;
+    }
+    h1{
+      font-size: 17px;
+    }
+    .campoTexto,
+    .campotexto2{
+      font-size: 17px;
+    }
+    .boton1{
+      font-size: 17px;
+    }
   }
 
 }

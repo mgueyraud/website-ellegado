@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inputs</title>
+	<title>Login</title>
 	<link href="../css/syles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width">
 </head>
 <body>
-  <div class="espacio"></div>
-  <div class="principal">
         <div class="cuerpo">
         <h1 class="titulo_login">Login</h1>
         <p class="status">hola</p>
         <input type="text" name="Texto" class="campoTexto" placeholder="User"></input>
         <input type="password" name="Texto2" class="campoTexto2" placeholder="Password"></input>
         <div class="boton1" style="margin-bottom: 30px;">login</div>
-        <table class="tabla">
-            <thead>
-                <tr>
-                    <th scope='row'>Usuario</th>
-                    <th scope='row'>Contrasena</th>
-                </tr>
-            </thead>
-            <tbody id='cuerpoTabla'>
-            </tbody>
-        </table>
-    </div> 
+        
+  
   
 <script
 		  src="https://code.jquery.com/jquery-3.2.1.js"

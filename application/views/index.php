@@ -23,12 +23,13 @@
             <div class="cycle-slideshow"
             data-cycle-fx=scrollHorz
             data-cycle-timeout=2000
+            id="cycle-slideshow"
             >
                 <img class="imgslide" src="assets/brigadeiro.jpg">
                 <img class="imgslide" src="assets/cinammon.jpg" >
                 <img class="imgslide" src="assets/pandulce-oreo.jpg">
                 <img class="imgslide" src="assets/pandulce.jpg">
-
+            
             </div>
             <!-- <div class="cycle-slideshow"
                 data-cycle-fx=scrollHorz
@@ -47,9 +48,8 @@
         </div>
     <div class='products' id="products">
         <div class="titulo">Productos</div>
-        <div class="pimagenes">
-            <div class="columna">
-                <div style="display: inline-block; margin: 0 20px;">
+        <div class="pimagenes" id="pimagenes">
+            <!--<div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen0" class="img_producto" src="assets/brigadeiro.jpg" alt="Avatar">
                         <div class="middle">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="display: inline-block; margin: 0 20px;">
+            <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen2" class="img_producto" src="assets/pandulce-oreo.jpg">
                     <div class="middle">
@@ -65,9 +65,7 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="columna">
-                <div style="display: inline-block; margin: 0 20px;">
+            <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen1" class="img_producto" src="assets/cinammon.jpg">
                     <div class="middle">
@@ -75,7 +73,6 @@
                     </div>
                 </div>
             </div>
-            
             <div style="display: inline-block; margin: 0 20px;">
                 <div class="container">
                     <img id="imagen3" class="img_producto" src="assets/pandulce.jpg">
@@ -84,8 +81,7 @@
                     </div>
                 </div>
             </div>
-            </div>
-            
+            -->
         </div>
     </div>
     <div id="aboutus">
@@ -142,7 +138,7 @@
         <div class="cuadroborde">
             <div class="titulo">Envianos tu opinion</div>
             <input id="name" type="text" name="nombre" placeholder="Nombre" class="campoTexto">
-            <input id="email" type="text" name="email" placeholder="Email" class="campoTexto">
+            <input id="email" type="email" required name="email" placeholder="Email" class="campoTexto">
             <textarea type="text" name="email" class="textarea">Mensaje</textarea>
             <div class="boton">Enviar mensaje</div>
         </div>
@@ -153,18 +149,104 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 		  crossorigin="anonymous"></script>
 
-<script src="/js/cycles.js"></script>
+
 <!--<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVuouEtI8E235OJNBVdHUrRQNZ4qCA3AE&callback=initMap">
     </script>-->
 
 <script>
   $(function(){
+        //cargarImagenesSlider();
+        cargarProductos();
+        var BASE_URL = "<?= base_url();?>";
         var boton = $('.boton');
         var name = $('#name');
         var email = $('#email');
         var message = $('.textarea');
         var body = $("html, body");
+
+        function cargarProductos(){
+          let table_container = $('#pimagenes');
+          console.log('hola');
+          $.ajax({
+            type: "GET",
+            url: '/usuarios_controller/getProductos',
+            success: function(response) {
+              console.log(response);
+              if(response.success) {
+                productos = response.productos;
+                console.log(productos);
+                for(var i in response.productos) {
+
+                  let id = productos[i].id;
+                  let texto = productos[i].nombre_producto;
+                  let imagen_id = productos[i].nombre_img;
+                  console.log(texto);
+                  table_container.append(generadorImagenes(id,texto,imagen_id));
+                }
+                activateActions();
+
+              } else {
+                console.log(response.message);
+              }
+            },
+            error: function(response) {
+              console.log(response);
+            }
+          });
+        }
+
+        function generadorImagenes(id,descripcion,imagen_id){
+
+          let image_url = BASE_URL + "assets/" + imagen_id + ".png";
+
+          return '<div style="display: inline-block; margin: 0 20px;">'+
+                    '<div class="container">'+
+                        '<img id="'+imagen_id+'" class="img_producto" src="assets/'+imagen_id+'.png">'+
+                        '<div class="middle">'+
+                            '<div class="text">'+descripcion+'</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>';
+
+        }
+
+        function cargarImagenesSlider(){
+          let slideshow_container = $('#cycle-slideshow');
+          console.log('hola');
+          $.ajax({
+            type: "GET",
+            url: '/usuarios_controller/getProductos',
+            success: function(response) {
+              console.log(response);
+              if(response.success) {
+                productos = response.productos;
+                console.log(productos);
+                for(var i in response.productos) {
+                  let promocion = productos[i].promocion;
+                  let imagen_id = productos[i].nombre_img;
+                  if(promocion == 1){
+                    slideshow_container.append(generadorImagenesSlider(imagen_id));
+                  }
+                }
+                activateActions();
+
+              } else {
+                console.log(response.message);
+              }
+            },
+            error: function(response) {
+              console.log(response);
+            }
+          });
+        }
+
+        function generadorImagenesSlider(imagen_id){
+            let image_url = BASE_URL + "assets/" + imagen_id + ".png";
+
+          return '<img class="imgslide" src="assets/'+imagen_id+'.png">';
+        }
+
         console.log($(window).height());
         $('#linkproductos').on('click',function(){
             $('html, body').animate({scrollTop:$('#products').position().top-100}, 'slow');
@@ -201,23 +283,7 @@
       }*/
       boton.on('click',function(){
         if(name.val() !== '' && email.val() !== '' && message.val() !== ''){
-            $.ajax({
-                method: "POST",
-                url: "/welcome/sendEmail",
-                data: {
-                    name : name.val(),
-                    email: email.val(),
-                    message: message.val()
-                },
-                success: function(response){
-                    console.log(response);
-                    alert("Mensaje enviado con exito!");
-                },
-                error: function(response) {
-                    console.log(response);
-                    alert("Error el mensaje no se ha podido enviar");
-                }
-            });
+            sendEmail(name.val(),email.val(),message.val());
         }else{
             alert("Debe completar todos los campos!");
         } 
@@ -236,6 +302,65 @@
         });
     }
 
+    function sendEmail(name, email, message){
+        if(validateEmail(email)){
+            $.ajax({
+                method: "POST",
+                url: "/welcome/sendEmail",
+                data: {
+                    name : name,
+                    email: email,
+                    message: message
+                },
+                success: function(response){
+                    console.log(response);
+                    alert("Mensaje enviado con exito!");
+                },
+                error: function(response) {
+                    console.log(response);
+                    alert("Error el mensaje no se ha podido enviar");
+                }
+            });
+        }
+    }
+
+    function activateActions(element){
+
+      if(typeof element == "undefined"){
+        $('.delete_action').on('click', function(){
+          let selected_id = $(this).attr('data-id');
+          deleteProducto(selected_id,$(this));
+        });
+
+        /*$('.edit_action').on('click', function() {
+          let selected_id = $(this).attr('data-id');
+          editPromocion(selected_id);
+        });*/
+
+      } else {
+        element.find('.delete_action').on('click', function(){
+          let selected_id = $(this).attr('data-id');
+          deletePromocion(selected_id,$(this));
+        });
+      }
+
+
+
+    }
+
+    function validateEmail(emailField){
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (reg.test(emailField) == false) 
+        {
+            alert('Direccion de email invalida');
+            return false;
+        }
+
+        return true;
+
+    }
+    
+
     // if the image in the window of browser when the page is loaded, show that image
     $(document).ready(function(){
             showImages('.img_producto');
@@ -248,5 +373,6 @@
 
     });
 </script>
+<script src="/js/cycles.js"></script>
 </body>
 </html>
