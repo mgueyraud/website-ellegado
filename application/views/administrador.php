@@ -267,13 +267,13 @@
 
         /*$('.edit_action').on('click', function() {
           let selected_id = $(this).attr('data-id');
-          editPromocion(selected_id);
+          editProducto(selected_id);
         });*/
 
       } else {
         element.find('.delete_action').on('click', function(){
           let selected_id = $(this).attr('data-id');
-          deletePromocion(selected_id,$(this));
+          deleteProducto(selected_id,$(this));
         });
       }
 

@@ -31,20 +31,6 @@
                 <img class="imgslide" src="assets/pandulce.jpg">
             
             </div>
-            <!-- <div class="cycle-slideshow"
-                data-cycle-fx=scrollHorz
-                data-cycle-timeout=3000
-                data-cyv
-                style="z-index: 200;height: 100%;width: 80%;position: absolute;top:151px;left:164px;width: 77%; "
-
-            >
-                <div class="middle" style="opacity: 1">
-                        <div class="text">Pan Dulce Brigadeiro</div>
-                    </div> 
-                    <div class="middle" style="opacity: ">
-                        <div class="text">Pan Dulce Brigadeiro</div>
-                    </div> 
-            </div> -->
         </div>
     <div class='products' id="products">
         <div class="titulo">Productos</div>
@@ -211,8 +197,22 @@
 
         }
 
+        /*function cargadorDeImagenes(response, background){
+            var strImagenes;
+            for(var i in response.productos) {
+                  let promocion = productos[i].promocion;
+                  let imagen_id = productos[i].nombre_img;
+                  if(promocion == 1){
+                    strImagenes = strImagenes+generadorImagenesSlider(imagen_id);
+                  }
+                }
+            console.log(strImagenes);
+            return strImagenes;
+        }
+
         function cargarImagenesSlider(){
-          let slideshow_container = $('#cycle-slideshow');
+          let background = $('.background1');
+
           console.log('hola');
           $.ajax({
             type: "GET",
@@ -222,11 +222,18 @@
               if(response.success) {
                 productos = response.productos;
                 console.log(productos);
+                background.append('<div class="cycle-slideshow"'+
+                    'data-cycle-fx=scrollHorz'+
+                    'data-cycle-timeout=2000'+
+                    'id="cycle-slideshow"'+
+                    '>'+
+                    cargadorDeImagenes(response,background)+
+                    '</div>');
                 for(var i in response.productos) {
                   let promocion = productos[i].promocion;
                   let imagen_id = productos[i].nombre_img;
                   if(promocion == 1){
-                    slideshow_container.append(generadorImagenesSlider(imagen_id));
+                    background.append(generadorImagenesSlider(imagen_id));
                   }
                 }
                 activateActions();
@@ -240,7 +247,7 @@
             }
           });
         }
-
+        */
         function generadorImagenesSlider(imagen_id){
             let image_url = BASE_URL + "assets/" + imagen_id + ".png";
 

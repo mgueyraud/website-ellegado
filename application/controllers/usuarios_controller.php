@@ -63,7 +63,7 @@ class usuarios_controller extends CI_Controller {
 		if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 			$this->load->view('administrador');
 		}else{
-			redirect(base_url('/'));
+			redirect(base_url('/welcome/login'));
 		}
 	}
 
